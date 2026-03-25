@@ -1,0 +1,57 @@
+{"timestamp":"00:00:03.760","source":"Server","level":"LOG","message":""}
+{"timestamp":"00:00:10.961","source":"Server","level":"LOG","message":"○ Compiling / ..."}
+{"timestamp":"00:00:15.968","source":"Browser","level":"INFO","message":"%cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold"}
+{"timestamp":"00:00:16.090","source":"Browser","level":"WARN","message":"Image with src \"http://localhost:3000/vercel.svg\" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: \"auto\"' or 'height: \"auto\"' to maintain the aspect ratio."}
+{"timestamp":"00:00:16.161","source":"Server","level":"WARN","message":"[browser] \"\\u001b[33mImage with src \\\"http://localhost:3000/vercel.svg\\\" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: \\\"auto\\\"' or 'height: \\\"auto\\\"' to maintain the aspect ratio.\\u001b[39m\" \"\\u001b[2m(file://C:/Users/NABS  COMPUTERS/Desktop/baillies/.next/dev/static/chunks/node_modules_next_dist_115brz8._.js:2431:13)\\u001b[22m\""}
+{"timestamp":"00:00:16.162","source":"Browser","level":"WARN","message":"\u001b[33mImage with src \"http://localhost:3000/vercel.svg\" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: \"auto\"' or 'height: \"auto\"' to maintain the aspect ratio.\u001b[39m"}
+{"timestamp":"00:18:39.442","source":"Server","level":"ERROR","message":"Error: ENOENT: no such file or directory, scandir 'C:\\Users\\NABS  COMPUTERS\\Desktop\\baillies\\app'"}
+{"timestamp":"00:18:39.456","source":"Server","level":"ERROR","message":"⨯ \"unhandledRejection:\" Error: ENOENT: no such file or directory, scandir 'C:\\Users\\NABS  COMPUTERS\\Desktop\\baillies\\app'"}
+{"timestamp":"00:18:39.470","source":"Server","level":"ERROR","message":"⨯ \"unhandledRejection: \" Error: ENOENT: no such file or directory, scandir 'C:\\Users\\NABS  COMPUTERS\\Desktop\\baillies\\app'"}
+{"timestamp":"00:18:40.989","source":"Server","level":"ERROR","message":"Error: ENOENT: no such file or directory, scandir 'C:\\Users\\NABS  COMPUTERS\\Desktop\\baillies\\app'"}
+{"timestamp":"00:18:40.998","source":"Server","level":"ERROR","message":"Error: ENOENT: no such file or directory, scandir 'C:\\Users\\NABS  COMPUTERS\\Desktop\\baillies\\app'"}
+{"timestamp":"00:18:41.025","source":"Server","level":"ERROR","message":"Error: ENOENT: no such file or directory, scandir 'C:\\Users\\NABS  COMPUTERS\\Desktop\\baillies\\app'"}
+{"timestamp":"00:18:41.036","source":"Server","level":"ERROR","message":"Error: ENOENT: no such file or directory, scandir 'C:\\Users\\NABS  COMPUTERS\\Desktop\\baillies\\app'"}
+{"timestamp":"00:18:41.058","source":"Server","level":"ERROR","message":"Error: ENOENT: no such file or directory, scandir 'C:\\Users\\NABS  COMPUTERS\\Desktop\\baillies\\app'"}
+{"timestamp":"00:18:41.067","source":"Server","level":"ERROR","message":"Error: ENOENT: no such file or directory, scandir 'C:\\Users\\NABS  COMPUTERS\\Desktop\\baillies\\app'"}
+{"timestamp":"00:18:41.087","source":"Server","level":"ERROR","message":"Error: ENOENT: no such file or directory, scandir 'C:\\Users\\NABS  COMPUTERS\\Desktop\\baillies\\app'"}
+{"timestamp":"00:18:41.099","source":"Server","level":"ERROR","message":"Error: ENOENT: no such file or directory, scandir 'C:\\Users\\NABS  COMPUTERS\\Desktop\\baillies\\app'"}
+{"timestamp":"00:18:41.120","source":"Server","level":"ERROR","message":"Error: ENOENT: no such file or directory, scandir 'C:\\Users\\NABS  COMPUTERS\\Desktop\\baillies\\app'"}
+{"timestamp":"00:18:41.138","source":"Server","level":"ERROR","message":"Error: ENOENT: no such file or directory, scandir 'C:\\Users\\NABS  COMPUTERS\\Desktop\\baillies\\app'"}
+{"timestamp":"00:18:41.158","source":"Server","level":"ERROR","message":"Error: ENOENT: no such file or directory, scandir 'C:\\Users\\NABS  COMPUTERS\\Desktop\\baillies\\app'"}
+{"timestamp":"00:18:41.167","source":"Server","level":"ERROR","message":"Error: ENOENT: no such file or directory, scandir 'C:\\Users\\NABS  COMPUTERS\\Desktop\\baillies\\app'"}
+{"timestamp":"00:18:41.182","source":"Server","level":"ERROR","message":"Error: ENOENT: no such file or directory, scandir 'C:\\Users\\NABS  COMPUTERS\\Desktop\\baillies\\app'"}
+{"timestamp":"00:18:41.187","source":"Server","level":"ERROR","message":"Error: ENOENT: no such file or directory, scandir 'C:\\Users\\NABS  COMPUTERS\\Desktop\\baillies\\app'"}
+{"timestamp":"00:18:41.207","source":"Server","level":"ERROR","message":"Error: ENOENT: no such file or directory, scandir 'C:\\Users\\NABS  COMPUTERS\\Desktop\\baillies\\app'"}
+{"timestamp":"00:18:41.217","source":"Server","level":"ERROR","message":"Error: ENOENT: no such file or directory, scandir 'C:\\Users\\NABS  COMPUTERS\\Desktop\\baillies\\app'"}
+{"timestamp":"00:18:41.318","source":"Server","level":"ERROR","message":"Error: ENOENT: no such file or directory, scandir 'C:\\Users\\NABS  COMPUTERS\\Desktop\\baillies\\app'"}
+{"timestamp":"00:18:41.340","source":"Server","level":"ERROR","message":"Error: ENOENT: no such file or directory, scandir 'C:\\Users\\NABS  COMPUTERS\\Desktop\\baillies\\app'"}
+{"timestamp":"00:18:41.400","source":"Server","level":"ERROR","message":"Error: ENOENT: no such file or directory, scandir 'C:\\Users\\NABS  COMPUTERS\\Desktop\\baillies\\app'"}
+{"timestamp":"00:18:41.407","source":"Server","level":"ERROR","message":"Error: ENOENT: no such file or directory, scandir 'C:\\Users\\NABS  COMPUTERS\\Desktop\\baillies\\app'"}
+{"timestamp":"00:18:41.433","source":"Server","level":"ERROR","message":"Error: ENOENT: no such file or directory, scandir 'C:\\Users\\NABS  COMPUTERS\\Desktop\\baillies\\app'"}
+{"timestamp":"00:18:41.441","source":"Server","level":"ERROR","message":"Error: ENOENT: no such file or directory, scandir 'C:\\Users\\NABS  COMPUTERS\\Desktop\\baillies\\app'"}
+{"timestamp":"00:18:41.470","source":"Server","level":"ERROR","message":"Error: ENOENT: no such file or directory, scandir 'C:\\Users\\NABS  COMPUTERS\\Desktop\\baillies\\app'"}
+{"timestamp":"00:18:41.481","source":"Server","level":"ERROR","message":"Error: ENOENT: no such file or directory, scandir 'C:\\Users\\NABS  COMPUTERS\\Desktop\\baillies\\app'"}
+{"timestamp":"00:18:41.496","source":"Server","level":"ERROR","message":"Error: ENOENT: no such file or directory, scandir 'C:\\Users\\NABS  COMPUTERS\\Desktop\\baillies\\app'"}
+{"timestamp":"00:18:41.501","source":"Server","level":"ERROR","message":"Error: ENOENT: no such file or directory, scandir 'C:\\Users\\NABS  COMPUTERS\\Desktop\\baillies\\app'"}
+{"timestamp":"00:18:41.522","source":"Server","level":"ERROR","message":"Error: ENOENT: no such file or directory, scandir 'C:\\Users\\NABS  COMPUTERS\\Desktop\\baillies\\app'"}
+{"timestamp":"00:18:41.528","source":"Server","level":"ERROR","message":"Error: ENOENT: no such file or directory, scandir 'C:\\Users\\NABS  COMPUTERS\\Desktop\\baillies\\app'"}
+{"timestamp":"00:18:41.720","source":"Server","level":"ERROR","message":"Error: ENOENT: no such file or directory, scandir 'C:\\Users\\NABS  COMPUTERS\\Desktop\\baillies\\app'"}
+{"timestamp":"00:18:41.728","source":"Server","level":"ERROR","message":"Error: ENOENT: no such file or directory, scandir 'C:\\Users\\NABS  COMPUTERS\\Desktop\\baillies\\app'"}
+{"timestamp":"00:18:41.743","source":"Server","level":"ERROR","message":"Error: ENOENT: no such file or directory, scandir 'C:\\Users\\NABS  COMPUTERS\\Desktop\\baillies\\app'"}
+{"timestamp":"00:18:41.748","source":"Server","level":"ERROR","message":"Error: ENOENT: no such file or directory, scandir 'C:\\Users\\NABS  COMPUTERS\\Desktop\\baillies\\app'"}
+{"timestamp":"00:18:41.765","source":"Server","level":"ERROR","message":"Error: ENOENT: no such file or directory, scandir 'C:\\Users\\NABS  COMPUTERS\\Desktop\\baillies\\app'"}
+{"timestamp":"00:18:41.772","source":"Server","level":"ERROR","message":"Error: ENOENT: no such file or directory, scandir 'C:\\Users\\NABS  COMPUTERS\\Desktop\\baillies\\app'"}
+{"timestamp":"00:18:41.788","source":"Server","level":"ERROR","message":"Error: ENOENT: no such file or directory, scandir 'C:\\Users\\NABS  COMPUTERS\\Desktop\\baillies\\app'"}
+{"timestamp":"00:18:41.794","source":"Server","level":"ERROR","message":"Error: ENOENT: no such file or directory, scandir 'C:\\Users\\NABS  COMPUTERS\\Desktop\\baillies\\app'"}
+{"timestamp":"00:18:41.808","source":"Server","level":"ERROR","message":"Error: ENOENT: no such file or directory, scandir 'C:\\Users\\NABS  COMPUTERS\\Desktop\\baillies\\app'"}
+{"timestamp":"00:18:41.812","source":"Server","level":"ERROR","message":"Error: ENOENT: no such file or directory, scandir 'C:\\Users\\NABS  COMPUTERS\\Desktop\\baillies\\app'"}
+{"timestamp":"00:18:41.828","source":"Server","level":"ERROR","message":"Error: ENOENT: no such file or directory, scandir 'C:\\Users\\NABS  COMPUTERS\\Desktop\\baillies\\app'"}
+{"timestamp":"00:18:41.840","source":"Server","level":"ERROR","message":"Error: ENOENT: no such file or directory, scandir 'C:\\Users\\NABS  COMPUTERS\\Desktop\\baillies\\app'"}
+{"timestamp":"00:18:41.861","source":"Server","level":"ERROR","message":"Error: ENOENT: no such file or directory, scandir 'C:\\Users\\NABS  COMPUTERS\\Desktop\\baillies\\app'"}
+{"timestamp":"00:18:41.870","source":"Server","level":"ERROR","message":"Error: ENOENT: no such file or directory, scandir 'C:\\Users\\NABS  COMPUTERS\\Desktop\\baillies\\app'"}
+{"timestamp":"00:18:41.888","source":"Server","level":"ERROR","message":"Error: ENOENT: no such file or directory, scandir 'C:\\Users\\NABS  COMPUTERS\\Desktop\\baillies\\app'"}
+{"timestamp":"00:18:41.895","source":"Server","level":"ERROR","message":"Error: ENOENT: no such file or directory, scandir 'C:\\Users\\NABS  COMPUTERS\\Desktop\\baillies\\app'"}
+{"timestamp":"00:18:41.915","source":"Server","level":"ERROR","message":"Error: ENOENT: no such file or directory, scandir 'C:\\Users\\NABS  COMPUTERS\\Desktop\\baillies\\app'"}
+{"timestamp":"00:18:41.921","source":"Server","level":"ERROR","message":"Error: ENOENT: no such file or directory, scandir 'C:\\Users\\NABS  COMPUTERS\\Desktop\\baillies\\app'"}
+{"timestamp":"00:18:42.056","source":"Server","level":"ERROR","message":"Error: ENOENT: no such file or directory, scandir 'C:\\Users\\NABS  COMPUTERS\\Desktop\\baillies\\app'"}
+{"timestamp":"00:18:42.064","source":"Server","level":"ERROR","message":"Error: ENOENT: no such file or directory, scandir 'C:\\Users\\NABS  COMPUTERS\\Desktop\\baillies\\app'"}
