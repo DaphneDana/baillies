@@ -52,6 +52,11 @@ export default function Navbar() {
                             <Link href="/dashboard" className="text-sm text-gray-600 dark:text-gray-300 hover:text-blue-600">
                                 Dashboard
                             </Link>
+                            {user.is_admin && (
+                                <Link href="/admin" className="text-sm text-gray-600 dark:text-gray-300 hover:text-blue-600">
+                                    Admin
+                                </Link>
+                            )}
                             <button
                                 onClick={handleLogout}
                                 className="text-sm bg-red-500 text-white px-3 py-1 rounded hover:bg-red-600"
@@ -83,6 +88,11 @@ export default function Navbar() {
                             <Link href="/dashboard" onClick={() => setMenuOpen(false)} className="text-sm text-gray-600 dark:text-gray-300">
                                 Dashboard
                             </Link>
+                            {user.is_admin && (
+                                <Link href="/admin" onClick={() => setMenuOpen(false)} className="text-sm text-gray-600 dark:text-gray-300">
+                                    Admin
+                                </Link>
+                            )}
                             <button onClick={handleLogout} className="text-sm text-left text-red-500">
                                 Logout
                             </button>
