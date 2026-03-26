@@ -1,0 +1,125 @@
+'use client'
+
+import { useState } from 'react'
+import Link from 'next/link'
+import { useRouter } from 'next/navigation'
+import api from '@/lib/api'
+import useAuthStore from '@/store/authStore'
+
+export default function RegisterPage() {
+    const [form, setForm] = useState({ username: '', email: '', password: '' })
+    const [error, setError] = useState('')
+    const [loading, setLoading] = useState(false)
+    const { setAuth } = useAuthStore()
+    const router = useRouter()
+
+    const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+        setForm({ ...form, [e.target.name]: e.target.value })
+    }
+
+    const handleSubmit = async (e: React.FormEvent) => {
+        e.preventDefault()
+        setLoading(true)
+        setError('')
+
+        try {
+            await api.post('/auth/register/', form)
+
+            const tokenRes = await api.post('/auth/login/', {
+                username: form.username,
+                password: form.password,
+            })
+            const token = tokenRes.data.token
+
+            const userRes = await api.get('/auth/me/', {
+                headers: { Authorization: `Token ${token}` }
+            })
+
+            setAuth(userRes.data, token)
+            router.push('/jobs')
+        } catch (err: unknown) {
+            const error = err as { response?: { data?: Record<string, string[]> } }
+            const data = error.response?.data
+            if (data) {
+                const firstError = Object.values(data)[0]
+                setError(Array.isArray(firstError) ? firstError[0] : 'Registration failed')
+            } else {
+                setError('Registration failed. Please try again.')
+            }
+        } finally {
+            setLoading(false)
+        }
+    }
+
+    return (
+        <main className="min-h-screen flex items-center justify-center px-4 bg-gray-50 dark:bg-gray-950">
+            <div className="w-full max-w-md bg-white dark:bg-gray-900 rounded-2xl shadow p-6">
+                <h1 className="text-2xl font-bold text-gray-800 dark:text-white mb-1">Create an account</h1>
+                <p className="text-sm text-gray-500 dark:text-gray-400 mb-6">Join Baillies and find your next role</p>
+
+                {error && (
+                    <div className="mb-4 text-sm text-red-600 bg-red-50 dark:bg-red-900/20 px-4 py-2 rounded">
+                        {error}
+                    </div>
+                )}
+
+                <form onSubmit={handleSubmit} className="flex flex-col gap-4">
+                    <div>
+                        <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
+                            Username
+                        </label>
+                        <input
+                            type="text"
+                            name="username"
+                            value={form.username}
+                            onChange={handleChange}
+                            required
+                            className="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-800 text-gray-900 dark:text-white text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
+                        />
+                    </div>
+
+                    <div>
+                        <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
+                            Email
+                        </label>
+                        <input
+                            type="email"
+                            name="email"
+                            value={form.email}
+                            onChange={handleChange}
+                            required
+                            className="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-800 text-gray-900 dark:text-white text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
+                        />
+                    </div>
+
+                    <div>
+                        <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
+                            Password
+                        </label>
+                        <input
+                            type="password"
+                            name="password"
+                            value={form.password}
+                            onChange={handleChange}
+                            required
+                            className="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-800 text-gray-900 dark:text-white text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
+                        />
+                    </div>
+
+                    <button
+                        type="submit"
+                        disabled={loading}
+                        className="w-full bg-blue-600 text-white py-2 rounded-lg text-sm font-medium hover:bg-blue-700 disabled:opacity-50"
+                    >
+                        {loading ? 'Creating account...' : 'Register'}
+                    </button>
+                </form>
+
+                <p className="mt-4 text-center text-sm text-gray-500 dark:text-gray-400">
+                    Already have an account?{' '}
+                    <Link href="/login" className="text-blue-600 hover:underline">Login</Link>
+                </p>
+            </div>
+        </main>
+    )
+}
