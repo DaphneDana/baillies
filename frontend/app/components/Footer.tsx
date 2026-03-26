@@ -2,7 +2,7 @@ import Link from 'next/link'
 
 export default function Footer() {
     return (
-        <footer className="border-t border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-900 px-4 py-2 mt-auto">
+        <footer className="border-t border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-900 px-4 py-8 mt-auto">
             <div className="max-w-3xl mx-auto flex flex-row items-center justify-between gap-3">
                 <p className="text-sm font-semibold text-blue-600">Baillies Career Portal</p>
 
