@@ -5,6 +5,7 @@ import { useRouter } from 'next/navigation'
 import { useState } from 'react'
 import useAuthStore from '@/store/authStore'
 import useThemeStore from '@/store/themeStore'
+import { MdLightMode, MdDarkMode } from 'react-icons/md'
 
 export default function Navbar() {
     const { user, logout } = useAuthStore()
@@ -18,7 +19,7 @@ export default function Navbar() {
     }
 
     return (
-        <nav className="bg-white dark:bg-gray-900 border-b border-gray-200 dark:border-gray-700 px-4 py-4">
+        <nav className="bg-white dark:bg-gray-900 border-b border-gray-200 dark:border-gray-700 px-4 py-2">
             {/* Top bar */}
             <div className="flex items-center justify-between">
                 <Link href="/" className="text-4xl font-bold text-blue-600">
@@ -26,11 +27,12 @@ export default function Navbar() {
                 </Link>
 
                 <div className="flex items-center gap-2">
+                    {/* Theme toggle — mobile only */}
                     <button
                         onClick={toggleTheme}
-                        className=" text-lg px-4 py-4 rounded border border-gray-300 dark:border-gray-600 dark:text-white"
+                        className="md:hidden text-lg px-3 py-3 rounded border border-gray-300 dark:border-gray-600 dark:text-white"
                     >
-                        {theme === 'light' ? '🌙' : '☀️'}
+                        {theme === 'light' ? <MdDarkMode size={20} /> : <MdLightMode size={20} />}
                     </button>
 
                     {/* Hamburger — mobile only */}
@@ -44,6 +46,13 @@ export default function Navbar() {
 
                 {/* Desktop links */}
                 <div className="hidden md:flex items-center gap-4">
+                    {/* Theme toggle — desktop */}
+                    <button
+                        onClick={toggleTheme}
+                        className="text-lg w-9 h-9 flex items-center justify-center rounded-lg border border-gray-200 dark:border-gray-600 hover:border-blue-400 transition-colors dark:text-white"
+                    >
+                        {theme === 'light' ? <MdDarkMode size={20} /> : <MdLightMode size={20} />}
+                    </button>
                     {user ? (
                         <>
                             <Link href="/jobs" className="text-sm text-gray-600 dark:text-gray-300 hover:text-blue-600">
@@ -59,7 +68,7 @@ export default function Navbar() {
                             )}
                             <button
                                 onClick={handleLogout}
-                                className="text-sm bg-red-500 text-white px-3 py-1 rounded hover:bg-red-600"
+                                className="text-sm bg-blue-600 text-white px-3 py-1 rounded hover:bg-red-600"
                             >
                                 Logout
                             </button>
