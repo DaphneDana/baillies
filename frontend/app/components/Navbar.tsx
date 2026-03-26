@@ -21,14 +21,14 @@ export default function Navbar() {
         <nav className="bg-white dark:bg-gray-900 border-b border-gray-200 dark:border-gray-700 px-4 py-4">
             {/* Top bar */}
             <div className="flex items-center justify-between">
-                <Link href="/" className="text-xl font-bold text-blue-600">
-                    Baillies
+                <Link href="/" className="text-4xl font-bold text-blue-600">
+                    Baillies.
                 </Link>
 
                 <div className="flex items-center gap-2">
                     <button
                         onClick={toggleTheme}
-                        className="text-sm px-3 py-1 rounded border border-gray-300 dark:border-gray-600 dark:text-white"
+                        className=" text-lg px-4 py-4 rounded border border-gray-300 dark:border-gray-600 dark:text-white"
                     >
                         {theme === 'light' ? '🌙' : '☀️'}
                     </button>
@@ -53,7 +53,7 @@ export default function Navbar() {
                                 Dashboard
                             </Link>
                             {user.is_admin && (
-                                <Link href="/admin" className="text-sm text-gray-600 dark:text-gray-300 hover:text-blue-600">
+                                <Link href="/admin/jobs" className="text-sm text-gray-600 dark:text-gray-300 hover:text-blue-600">
                                     Admin
                                 </Link>
                             )}
@@ -66,10 +66,10 @@ export default function Navbar() {
                         </>
                     ) : (
                         <>
-                            <Link href="/login" className="text-sm text-gray-600 dark:text-gray-300 hover:text-blue-600">
+                            <Link href="/login" className="text-base text-gray-600 dark:text-gray-300 hover:text-blue-600">
                                 Login
                             </Link>
-                            <Link href="/register" className="text-sm bg-blue-600 text-white px-3 py-1 rounded hover:bg-blue-700">
+                            <Link href="/register" className="text-base bg-blue-600 text-white px-5 py-2 rounded hover:bg-blue-700">
                                 Register
                             </Link>
                         </>
@@ -99,7 +99,7 @@ export default function Navbar() {
                         </>
                     ) : (
                         <>
-                            <Link href="/login" onClick={() => setMenuOpen(false)} className="text-sm text-gray-600 dark:text-gray-300">
+                            <Link href="/login" onClick={() => setMenuOpen(false)} className="text-lg text-gray-600 dark:text-gray-300">
                                 Login
                             </Link>
                             <Link href="/register" onClick={() => setMenuOpen(false)} className="text-sm text-blue-600 font-medium">

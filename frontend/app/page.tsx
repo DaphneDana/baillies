@@ -1,6 +1,22 @@
+'use client'
+
+import { useEffect, useState } from 'react'
 import Link from 'next/link'
+import { useRouter } from 'next/navigation'
+import useAuthStore from '@/store/authStore'
 
 export default function HomePage() {
+    const [mounted, setMounted] = useState(false)
+    const { user } = useAuthStore()
+    const router = useRouter()
+
+    useEffect(() => { setMounted(true) }, [])
+
+    useEffect(() => {
+        if (!mounted) return
+        if (user) router.push('/jobs')
+    }, [mounted, user])
+
     return (
         <main className="min-h-screen bg-gray-50 dark:bg-gray-950">
             {/* Hero */}

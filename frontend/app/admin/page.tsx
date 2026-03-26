@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from 'react'
 import { useRouter } from 'next/navigation'
+import Link from 'next/link'
 import api from '@/lib/api'
 import useAuthStore from '@/store/authStore'
 
@@ -73,10 +74,22 @@ export default function AdminDashboardPage() {
 
     return (
         <main className="px-4 py-6 max-w-3xl mx-auto">
-            <h1 className="text-2xl font-bold text-gray-800 dark:text-white mb-1">Admin Dashboard</h1>
-            <p className="text-sm text-gray-500 dark:text-gray-400 mb-6">
-                {applications.length} application{applications.length !== 1 ? 's' : ''} total
-            </p>
+            <div className="flex items-center justify-between mb-6">
+                <div>
+                    <h1 className="text-2xl font-bold text-gray-800 dark:text-white mb-1">Admin Dashboard</h1>
+                    <p className="text-sm text-gray-500 dark:text-gray-400">
+                        {applications.length} application{applications.length !== 1 ? 's' : ''} total
+                    </p>
+                </div>
+                <div className="flex gap-2">
+                    <Link href="/admin/departments" className="text-sm border border-blue-600 text-blue-600 px-4 py-2 rounded-lg hover:bg-blue-50 dark:hover:bg-blue-900/20">
+                        Departments
+                    </Link>
+                    <Link href="/admin/jobs" className="text-sm bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700">
+                        Manage Jobs
+                    </Link>
+                </div>
+            </div>
 
             {applications.length === 0 ? (
                 <div className="text-center py-12 bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 rounded-xl">

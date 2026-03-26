@@ -1,13 +1,25 @@
 'use client'
 
+import { useEffect, useState } from 'react'
 import useThemeStore from '@/store/themeStore'
 
 export default function ThemeProvider({ children }: { children: React.ReactNode }) {
     const { theme } = useThemeStore()
+    const [mounted, setMounted] = useState(false)
 
-    return (
-        <div className={theme === 'dark' ? 'dark' : ''} style={{ minHeight: '100vh' }}>
-            {children}
-        </div>
-    )
+    useEffect(() => {
+        setMounted(true)
+    }, [])
+
+    useEffect(() => {
+        if (!mounted) return
+        const html = document.documentElement
+        if (theme === 'dark') {
+            html.classList.add('dark')
+        } else {
+            html.classList.remove('dark')
+        }
+    }, [theme, mounted])
+
+    return <>{children}</>
 }

@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import { useRouter } from 'next/navigation'
 import api from '@/lib/api'
@@ -10,8 +10,16 @@ export default function RegisterPage() {
     const [form, setForm] = useState({ username: '', email: '', password: '' })
     const [error, setError] = useState('')
     const [loading, setLoading] = useState(false)
-    const { setAuth } = useAuthStore()
+    const [mounted, setMounted] = useState(false)
+    const { setAuth, user } = useAuthStore()
     const router = useRouter()
+
+    useEffect(() => { setMounted(true) }, [])
+
+    useEffect(() => {
+        if (!mounted) return
+        if (user) router.push('/jobs')
+    }, [mounted, user])
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         setForm({ ...form, [e.target.name]: e.target.value })
