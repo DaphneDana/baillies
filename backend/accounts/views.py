@@ -5,6 +5,8 @@ from rest_framework.permissions import IsAuthenticated
 from .serializers import RegisterSerializer
 
 class RegisterView(APIView):
+    # No permission required — anyone can register
+
     def post(self, request):
         serializer = RegisterSerializer(data=request.data)
         if serializer.is_valid():
@@ -13,11 +15,10 @@ class RegisterView(APIView):
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 
-
 class MeView(APIView):
-    permission_classes = [IsAuthenticated]
+    permission_classes = [IsAuthenticated]  # requires a valid token
 
     def get(self, request):
+        # request.user is set automatically from the token in the Authorization header
         serializer = RegisterSerializer(request.user)
         return Response(serializer.data)
-
