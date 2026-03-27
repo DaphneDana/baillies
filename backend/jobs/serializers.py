@@ -9,8 +9,8 @@ class DepartmentSerializer(serializers.ModelSerializer):
 
 
 class JobSerializer(serializers.ModelSerializer):
-    department = DepartmentSerializer(read_only=True)
-    department_id = serializers.PrimaryKeyRelatedField(
+    department = DepartmentSerializer(read_only=True)       
+    department_id = serializers.PrimaryKeyRelatedField(     # accepts just the ID when creating
         queryset=Department.objects.all(), source='department', write_only=True
     )
 
@@ -24,9 +24,9 @@ class ApplicationSerializer(serializers.ModelSerializer):
     job_id = serializers.PrimaryKeyRelatedField(
         queryset=Job.objects.all(), source='job', write_only=True
     )
-    applicant = serializers.StringRelatedField(read_only=True)
+    applicant = serializers.StringRelatedField(read_only=True)  # returns the user's __str__ (email)
 
     class Meta:
         model = Application
         fields = ['id', 'applicant', 'job', 'job_id', 'status', 'cover_letter', 'applied_at']
-        read_only_fields = ['status', 'applied_at']
+        read_only_fields = ['status', 'applied_at']  # only admins can change status

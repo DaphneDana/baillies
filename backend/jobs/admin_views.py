@@ -10,9 +10,8 @@ class AdminApplicationListView(APIView):
     permission_classes = [IsAdminUser]
 
     def get(self, request):
-        applications = Application.objects.all().order_by('-applied_at')
-        serializer = ApplicationSerializer(applications, many=True)
-        return Response(serializer.data)
+        applications = Application.objects.all().order_by('-applied_at')  # newest first
+        return Response(ApplicationSerializer(applications, many=True).data)
 
 
 class AdminApplicationUpdateView(APIView):
@@ -25,23 +24,20 @@ class AdminApplicationUpdateView(APIView):
             return Response({'error': 'Application not found'}, status=status.HTTP_404_NOT_FOUND)
 
         new_status = request.data.get('status')
-        valid_statuses = ['pending', 'reviewed', 'accepted', 'rejected']
-        if new_status not in valid_statuses:
+        if new_status not in ['pending', 'reviewed', 'accepted', 'rejected']:
             return Response({'error': 'Invalid status'}, status=status.HTTP_400_BAD_REQUEST)
 
         application.status = new_status
         application.save()
-        serializer = ApplicationSerializer(application)
-        return Response(serializer.data)
+        return Response(ApplicationSerializer(application).data)
 
 
 class AdminJobListView(APIView):
     permission_classes = [IsAdminUser]
 
     def get(self, request):
-        jobs = Job.objects.all().order_by('-created_at')
-        serializer = JobSerializer(jobs, many=True)
-        return Response(serializer.data)
+        jobs = Job.objects.all().order_by('-created_at')  # admins see all jobs including inactive
+        return Response(JobSerializer(jobs, many=True).data)
 
     def post(self, request):
         serializer = JobSerializer(data=request.data)
@@ -60,19 +56,20 @@ class AdminJobUpdateView(APIView):
         except Job.DoesNotExist:
             return Response({'error': 'Job not found'}, status=status.HTTP_404_NOT_FOUND)
 
+        # partial=True allows updating only the fields sent (e.g. just is_active)
         serializer = JobSerializer(job, data=request.data, partial=True)
         if serializer.is_valid():
             serializer.save()
             return Response(serializer.data)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
+
 class AdminDepartmentListView(APIView):
     permission_classes = [IsAdminUser]
 
     def get(self, request):
         departments = Department.objects.all()
-        serializer = DepartmentSerializer(departments, many=True)
-        return Response(serializer.data)
+        return Response(DepartmentSerializer(departments, many=True).data)
 
     def post(self, request):
         serializer = DepartmentSerializer(data=request.data)
