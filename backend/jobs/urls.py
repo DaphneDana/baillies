@@ -9,6 +9,7 @@ urlpatterns = [
     path('<int:pk>/', JobDetailView.as_view(), name='job-detail'),
     path('<int:pk>/apply/', ApplyJobView.as_view(), name='job-apply'),
     path('applications/', MyApplicationsView.as_view(), name='my-applications'),
+    # path('app/', MyApplicationView.as_view(), name ='my-application'),
 
     # Admin-only endpoints
     path('admin/applications/', AdminApplicationListView.as_view(), name='admin-applications'),
